@@ -22,6 +22,7 @@ Rails.application.routes.draw do
         get  :error_mail
         get  :add_roles
         post :save_roles
+        get  :desboart
       end
     end
     resources :blogs do
