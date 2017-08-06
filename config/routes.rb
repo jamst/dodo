@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :admin do
-    root to: 'employees#index'
+    root to: 'employees#desboart'
     resources :categories do
       collection do
         get :show_name
