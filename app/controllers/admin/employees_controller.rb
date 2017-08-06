@@ -4,6 +4,9 @@ class Admin::EmployeesController < Admin::BaseController
   # before_action :authenticate_employee!, :except => [:forget_password, :reset_mail]
   # before_action :left_tab, :only => [:index]
   # before_action :set_employee, only: [:destroy]
+  def desboart
+
+  end
 
   def index
     @q = SearchParams.new(params[:search_params] || {})
