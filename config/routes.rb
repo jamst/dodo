@@ -19,6 +19,8 @@ Rails.application.routes.draw do
         post :forget_password
         get  :reset_mail
         get  :error_mail
+        get  :add_roles
+        post :save_roles
       end
     end
     resources :blogs do
