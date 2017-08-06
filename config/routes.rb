@@ -14,6 +14,28 @@ Rails.application.routes.draw do
         get :show_name
       end  
     end
+    resources :comments do
+      collection do
+        get :show_name
+      end  
+    end  
+
+    resources :permissions do
+      collection do
+        get :show_name
+        get  :add_roles
+        post :save_roles
+      end  
+    end
+
+    resources :roles do
+      collection do
+        get  :add_permissions
+        post :save_permissions
+        get  :add_employees
+        post :save_employees
+      end  
+    end 
     resources :employees do
       collection do
         get  :forget_password
