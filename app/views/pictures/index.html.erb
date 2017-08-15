@@ -1,0 +1,11 @@
+<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+  <figure data-am-widget="figure" class="am am-figure am-figure-default "   data-am-figure="{  pureview: 'true' }">
+      <div id="container">  
+      <%(1..10).each do |i|%>     
+          <div><%= image_tag "/assets/#{i<10 ? '0'+i.to_s : i}.jpg"%><h3>Agfa</h3></div>
+      <% end %>    
+    </div> 
+  </figure>	
+</div>
+<!-- content end -->
