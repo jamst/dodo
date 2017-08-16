@@ -2,7 +2,7 @@ class PicturesController < ApplicationController
   layout 'blog'
 
   def index
-    @picture = Picture.all
+    @picture = Picture.last
   end
 
 end
