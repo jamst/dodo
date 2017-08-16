@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
+  resources :pictures, only: [:index]
   resources :blogs do
     collection do
       get :top_search
@@ -48,6 +49,11 @@ Rails.application.routes.draw do
       end
     end
     resources :blogs do
+      collection do
+        post :upload_image
+      end
+    end
+    resources :pictures do
       collection do
         post :upload_image
       end

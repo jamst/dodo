@@ -1,14 +1,13 @@
 class Blog < ApplicationRecord
 	has_many :attachments, as: :attachment_entity
-    belongs_to :category
-    has_many :comments
+  belongs_to :category
+  has_many :comments
 
 	def user_name
       "@#{self.title}"
 	end
 
 	def self.view_count_top
-      # order(id: :desc).limit(5)
       order(view_count: :desc).limit(5)
 	end
 
