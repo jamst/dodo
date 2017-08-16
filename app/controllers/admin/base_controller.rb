@@ -3,7 +3,7 @@ class Admin::BaseController < ActionController::Base
     layout "admin"
     respond_to :html
     before_action :authenticate_employee!
-    before_action :check_permission, :except => [:desboart]
+    #before_action :check_permission, :except => [:desboart]
 
     def check_permission
        unless current_employee.roles.map{|role| role.permissions}.flatten.uniq.select{|per| per.controller_tag == "#{controller_name}"}.size > 0
