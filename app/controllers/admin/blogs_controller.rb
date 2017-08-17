@@ -5,11 +5,11 @@ class Admin::BlogsController < Admin::BaseController
   # GET /blogs.json
   def index
     if params[:title]
-      @blogs = Blog.where("title like ? ","%#{params[:title]}%").page(params[:page]).per(10)
+      @blogs = Blog.where("title like ? ","%#{params[:title]}%").order(id: :desc).page(params[:page]).per(10)
     elsif params[:category_id]
-      @blogs = Blog.where(category_id:params[:category_id]).page(params[:page]).per(10)
+      @blogs = Blog.where(category_id:params[:category_id]).order(id: :desc).page(params[:page]).per(10)
     else
-      @blogs = Blog.all.page(params[:page]).per(10)
+      @blogs = Blog.all.order(id: :desc).page(params[:page]).per(10)
     end
   end
 
