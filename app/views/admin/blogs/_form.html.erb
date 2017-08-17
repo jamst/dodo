@@ -25,8 +25,9 @@
 	  </div>
   </div>
   
-  <div class="actions">
-    <%= f.submit %>
+ <div class="row-fluid">
+	<a href="javascript:history.back();"><div class="ui button cancel">返回</div></a>
+    <%= f.submit :class=>"ui primary button"%>
   </div>
 <% end %>
 

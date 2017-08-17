@@ -1,7 +1,7 @@
 class Admin::PicturesController < Admin::BaseController
 
   def index
-    @pictures = Picture.all.page(params[:page]).per(10)
+    @pictures = Picture.all.order(id: :desc).page(params[:page]).per(10)
   end
 
   def new
