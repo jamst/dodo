@@ -18,7 +18,7 @@
 		    <br/> 
 			  <div class="row-fluid">
 			  <%= form_for @picture, :method=>"post", :remote=>true , :url=>"upload_image", html: { id: 'image_preview_form',:multipart => true , autocomplete: "off"  } do |f| %>
-				售后申请凭证：
+				图片：
 				<%= file_field_tag "draft_img", id: 'draft_img' %>
 				<%= hidden_field_tag :had_attachment_ids %>
 				<div class="ui primary button" onclick="new_problem_message_images()">添加</div>
