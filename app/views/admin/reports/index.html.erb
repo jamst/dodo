@@ -28,7 +28,7 @@
 
 <div class="ui grid">
   <div class="left floated wide column">
-    <%= link_to "下载", download_excell_report_admin_reports_path(report_params:params[:search_params].permit!) , class: 'ui primary button' %>
+    <%= link_to "下载", download_excell_report_admin_reports_path(report_params:params[:search_params]&.permit!) , class: 'ui primary button' %>
     <%= link_to "导入", import_excell_admin_reports_path() , class: 'ui primary button' %>
   </div>
 </div>
