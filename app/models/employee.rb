@@ -14,7 +14,7 @@ class Employee < ApplicationRecord
       employee = Employee.find_or_initialize_by(email: hash[:email])
       employee.assign_attributes(name: hash[:name],
                                  mobile: hash[:mobile],
-                                 password:111111)
+                                 password:11111111)
       employee.save
     end     
 
