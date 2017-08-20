@@ -59,7 +59,7 @@ class Admin::ReportsController < Admin::BaseController
           Employee::EMPLOYEE_COLUMNS.each do |c,i|
             record[c] = row[i]&.value 
           end
-          Employee.save_from_hash(record, current_user)
+          Employee.save_from_hash(record)
         end
           @message[:color] = "#00DD00"
           @message[:detail] = "用户信息导入成功"
