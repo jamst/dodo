@@ -1,9 +1,16 @@
 <div class="ui grid">
   <div class="left floated fourteen wide column">
-    <h2><a href="javascript:history.back()"><i class="blue reply icon"></i></a><%= controller_name %>员工管理 <%= action_name %></h2>
+    <h2><a href="javascript:history.back()"><i class="blue reply icon"></i></a>员工管理</h2>
   </div>
 </div>
 <%= render 'search_form'  %>
+
+<div class="ui grid">
+  <div class="left floated wide column">
+    <%= link_to "报表导出", admin_reports_path() , class: 'ui primary button' %>
+  </div>
+</div>
+
 <div class="ui blue segment">
   <table class="ui selectable striped celled table">
     <thead>
@@ -21,7 +28,7 @@
     </tbody>
   </table>
   <span class="blue">
-    <%#= page_entries_info(@employees) %>
+    <%= page_entries_info(@employees) %>
   </span>
-  <%#= paginate(@employees, :theme => 'admin')%>
+  <%= paginate(@employees, :theme => 'admin')%>
 </div>
