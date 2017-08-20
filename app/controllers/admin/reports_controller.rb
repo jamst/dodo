@@ -1,7 +1,7 @@
 class Admin::ReportsController < Admin::BaseController
 
   def index
-  	@q = SearchParams.new(params[:search_params] || {}) 
+  	@q = SearchParams.new(params[:search_params] || {end_time:Time.now}) 
     search_params = @q.attributes(self)
 
   	@columns = ["name","email","created_at"]
