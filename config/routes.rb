@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :comments
   resources :pictures, only: [:index]
-  resources :blogs do
+  resources :blogs , only: [:index,:show]do
     collection do
       get :top_search
       post :upload_image
