@@ -15,4 +15,8 @@ class Blog < ApplicationRecord
   	  self.cover_img ? Attachment.find(self.cover_img.to_i).path.url : "/assets/f10.jpg"
   end
 
+  def mpt
+    self.mp3 ? Attachment.find(self.mp3).path.url : ""
+  end
+
 end
