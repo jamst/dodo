@@ -38,6 +38,11 @@ class Admin::BlogsController < Admin::BaseController
           @blog.cover_img = attachment.id
           @blog.save
         end
+        unless params[:mp3].blank?
+          attachment = Attachment.create(attachment_entity_type: "Blog",attachment_entity_id: @blog.id , path: params[:mp3], created_by: 1 ) 
+          @blog.mp3 = attachment.id
+          @blog.save
+        end
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
@@ -55,6 +60,11 @@ class Admin::BlogsController < Admin::BaseController
         unless params[:draft_img].blank?
           attachment = Attachment.create(attachment_entity_type: "Blog",attachment_entity_id: @blog.id , path: params[:draft_img], created_by: 1 ) 
           @blog.cover_img = attachment.id
+          @blog.save
+        end
+        unless params[:mp3].blank?
+          attachment = Attachment.create(attachment_entity_type: "Blog",attachment_entity_id: @blog.id , path: params[:mp3], created_by: 1 ) 
+          @blog.mp3 = attachment.id
           @blog.save
         end
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -89,6 +99,6 @@ class Admin::BlogsController < Admin::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:category_id,:title,:content,:cover_img)
+      params.require(:blog).permit(:category_id,:title,:content,:cover_img,:mp3)
     end
 end

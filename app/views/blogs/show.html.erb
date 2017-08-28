@@ -1,4 +1,11 @@
 <!-- content srart -->
+<%# if @blog.mpt.present? %>
+    <audio autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+                src="<%= @blog.mpt %>">
+          你的浏览器不支持audio标签
+    </audio>
+<%# end %>
+
 <div class="am-g am-g-fixed blog-fixed blog-content">
     <div class="am-u-md-8 am-u-sm-12">
       <article class="am-article blog-article-p">
