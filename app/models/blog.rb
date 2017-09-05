@@ -2,6 +2,7 @@ class Blog < ApplicationRecord
   has_many :attachments, as: :attachment_entity
   belongs_to :category, optional: true
   has_many :comments
+  serialize :tag
 
 	def user_name
       "@#{self.title}"
