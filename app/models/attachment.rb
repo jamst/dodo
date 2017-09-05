@@ -2,6 +2,7 @@ class Attachment < ApplicationRecord
   belongs_to :attachment_entity, polymorphic: true, optional: true
   mount_uploader :path,  AttachmentUploader
   before_save :set_fields
+  serialize :tag
 
   def set_fields
     self.content_type = path.content_type
