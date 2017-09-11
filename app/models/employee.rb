@@ -1,5 +1,6 @@
 class Employee < ApplicationRecord
 	has_and_belongs_to_many :roles
+  serialize :tag
 
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
