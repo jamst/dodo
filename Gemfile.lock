@@ -135,6 +135,11 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+<<<<<<< HEAD
+=======
+    non-stupid-digest-assets (1.0.9)
+      sprockets (>= 2.0)
+>>>>>>> db108657695a34659bcf9361be2f08b81b60545d
     orm_adapter (0.5.0)
     public_suffix (2.0.5)
     puma (3.9.1)
@@ -247,6 +252,7 @@ DEPENDENCIES
   kaminari!
   listen (>= 3.0.5, < 3.2)
   mysql2
+  non-stupid-digest-assets
   puma (~> 3.7)
   rails (= 5.1.2)
   remotipart (~> 1.2)
