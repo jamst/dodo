@@ -56,6 +56,7 @@ Rails.application.routes.draw do
     resources :pictures do
       collection do
         post :upload_image
+        get :show_gps
       end
     end
     resources :reports, only: [:index] do
