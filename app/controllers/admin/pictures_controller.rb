@@ -24,9 +24,7 @@ class Admin::PicturesController < Admin::BaseController
     require 'exifr/jpeg'
     @image = Attachment.find(params[:id])
     path = "#{Rails.root}/public#{@image.path.to_s}"
-    p path
     exif = EXIFR::JPEG.new(path)
-    p exif.width
     @latitude = exif.gps&.latitude||39.9717219722
     @longitude = exif.gps&.longitude||116.4911780001
     redirect_to "http://www.gpsspg.com/maps.htm?maps=3&s=#{@latitude},#{@longitude}"
