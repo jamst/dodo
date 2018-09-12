@@ -19,6 +19,17 @@ class Admin::PicturesController < Admin::BaseController
     @picture = Picture.find(params[:id])
   end
 
+  # 显示gps信息
+  def show_gps
+    require 'exifr/jpeg'
+    @image = Attachment.find(params[:id])
+    path = "#{Rails.root}/public#{@image.path.to_s}"
+    exif = EXIFR::JPEG.new(path)
+    @latitude = exif.gps&.latitude||39.9717219722
+    @longitude = exif.gps&.longitude||116.4911780001
+    redirect_to "http://www.gpsspg.com/maps.htm?maps=3&s=#{@latitude},#{@longitude}"
+  end
+
   # 异步保存图片
   def upload_image
     new_attachment = Attachment.create({attachment_entity_type: "Picture", path: params[:draft_img], created_by: 1})

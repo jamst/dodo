@@ -4,5 +4,6 @@ class AddCoverImgToBlogs < ActiveRecord::Migration[5.1]
   	add_column :blogs ,:category_id, :integer, comment: 'category' 
   	add_column :blogs ,:view_count, :integer, comment: 'view_count' 
   	add_column :blogs ,:seq, :integer, default: 10, comment: 'seq' 
+  	add_column :blogs ,:mp3, :integer, comment: 'pm3_bgroud_music' 
   end
 end

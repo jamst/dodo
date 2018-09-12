@@ -17,7 +17,7 @@ class Blog < ApplicationRecord
   end
 
   def mpt
-    self.mp3 ? Attachment.find(self.mp3).path.url : ""
+    self.mp3.present? ? Attachment.find(self.mp3).path.url : ""
   end
 
 end
